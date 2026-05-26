@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL;
 <Base title="ホーム">
 
   <section class="hero">
-    <img src={`${base}images/hyoushou-shiki.jpg`} alt="" class="hero__bg" />
+    <img src={`${base}images/hero.jpg`} alt="" class="hero__bg" />
     <div class="hero__gradient"></div>
     <div class="hero__73" aria-hidden="true">73</div>
     <div class="hero__content">
@@ -146,13 +146,12 @@ const base = import.meta.env.BASE_URL;
     font-family: var(--ff-condensed);
     font-size: clamp(14rem, 35vw, 28rem);
     font-weight: 700;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.3);
     line-height: 0.8;
     pointer-events: none;
     z-index: 2;
     letter-spacing: -0.04em;
-    mix-blend-mode: overlay;
-    text-shadow: 0 0 80px rgba(255,255,255,0.3);
+    text-shadow: 0 0 60px rgba(0,0,0,0.15);
   }
   .hero__content {
     position: relative;
