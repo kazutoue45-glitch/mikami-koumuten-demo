@@ -1,0 +1,62 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+<section class="cta-section">
+  <div class="container cta-section__inner">
+    <p class="cta-section__lead">まずはお気軽にご相談ください</p>
+    <p class="cta-section__sub">公共工事から個人住宅のリフォームまで、どんなご相談にも対応いたします。</p>
+    <div class="cta-section__actions">
+      <a href="tel:0115111951" class="cta-section__tel">
+        <span class="cta-section__tel-label">お電話でのお問い合わせ</span>
+        <span class="cta-section__tel-num">011-511-1951</span>
+      </a>
+      <a href={`${base}contact/`} class="btn btn--gold cta-section__btn">メールで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    background: var(--c-navy);
+    padding: var(--sp-3xl) 0;
+    text-align: center;
+    color: var(--c-white);
+  }
+  .cta-section__lead {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-h2);
+    font-weight: 700;
+    margin-bottom: var(--sp-sm);
+  }
+  .cta-section__sub {
+    font-size: var(--fs-body);
+    color: rgba(255,255,255,0.7);
+    margin-bottom: var(--sp-lg);
+  }
+  .cta-section__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-lg);
+    flex-wrap: wrap;
+  }
+  .cta-section__tel {
+    text-align: center;
+  }
+  .cta-section__tel-label {
+    display: block;
+    font-size: var(--fs-small);
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 4px;
+  }
+  .cta-section__tel-num {
+    font-family: var(--ff-condensed);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .cta-section__btn {
+    font-size: 1.05rem;
+    padding: 16px 40px;
+  }
+</style>

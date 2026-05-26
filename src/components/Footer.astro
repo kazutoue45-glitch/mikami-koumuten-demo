@@ -1,0 +1,91 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+<footer class="footer">
+  <div class="footer__inner container">
+    <div class="footer__info">
+      <p class="footer__company">株式会社 三上工務店</p>
+      <p class="footer__addr">〒064-0922 札幌市中央区南22条西7丁目1-7</p>
+      <p class="footer__tel">TEL: 011-511-1951 / FAX: 011-511-1967</p>
+      <p class="footer__hours">営業時間: 平日 9:00〜17:00</p>
+    </div>
+    <nav class="footer__nav">
+      <a href={base}>ホーム</a>
+      <a href={`${base}about/`}>当社について</a>
+      <a href={`${base}works/`}>施工実績</a>
+      <a href={`${base}contact/`}>お問い合わせ</a>
+    </nav>
+    <div class="footer__badges">
+      <img src={`${base}images/kenkou-keiei.jpg`} alt="健康経営優良法人2026" width="160" height="auto" loading="lazy" />
+      <img src={`${base}images/sapporo-sdgs.jpg`} alt="SAPPORO SDGs" width="120" height="auto" loading="lazy" />
+      <img src={`${base}images/sapporo-qms.gif`} alt="サッポロQMS" width="60" height="auto" loading="lazy" />
+    </div>
+  </div>
+  <div class="footer__copy">
+    <p>&copy; 2026 株式会社三上工務店 All Rights Reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--c-navy);
+    color: rgba(255,255,255,0.85);
+    padding: var(--sp-3xl) 0 0;
+  }
+  .footer__inner {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: var(--sp-xl);
+    align-items: start;
+  }
+  .footer__company {
+    font-family: var(--ff-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--c-white);
+    margin-bottom: var(--sp-sm);
+  }
+  .footer__addr, .footer__tel, .footer__hours {
+    font-size: var(--fs-small);
+    line-height: 1.8;
+  }
+  .footer__nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-xs);
+  }
+  .footer__nav a {
+    font-size: var(--fs-small);
+    color: rgba(255,255,255,0.7);
+    transition: var(--transition);
+  }
+  .footer__nav a:hover { color: var(--c-gold); }
+
+  .footer__badges {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-sm);
+    background: rgba(255,255,255,0.08);
+    padding: var(--sp-sm);
+    border-radius: 6px;
+  }
+  .footer__badges img { border-radius: 2px; }
+
+  .footer__copy {
+    margin-top: var(--sp-xl);
+    padding: var(--sp-sm) 0;
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  @media (max-width: 768px) {
+    .footer__inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .footer__nav { flex-direction: row; justify-content: center; flex-wrap: wrap; gap: var(--sp-sm); }
+    .footer__badges { justify-content: center; }
+  }
+</style>

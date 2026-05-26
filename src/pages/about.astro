@@ -1,0 +1,230 @@
+---
+import Base from '../layouts/Base.astro';
+import Cta from '../components/Cta.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Base title="当社について" description="昭和28年創業、70年以上の歴史を持つ札幌の建築会社。公共工事を主軸に、確かな技術と品質でお応えします。">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-hero__en">About Us</span>
+      <h1 class="page-hero__title">当社について</h1>
+    </div>
+  </section>
+
+  <section class="greeting">
+    <div class="container greeting__inner">
+      <div class="greeting__photo">
+        <img src={`${base}images/hyoushou-shiki.jpg`} alt="代表 表彰式にて" width="400" height="530" loading="lazy" />
+      </div>
+      <div class="greeting__body">
+        <div class="section-header" style="text-align:left;">
+          <span class="section-header__en">Message</span>
+          <h2 class="section-header__ja">代表挨拶</h2>
+        </div>
+        <p>「個性的で美しい街並みを創造する企業」を目的に立ち上げました。</p>
+        <p>当社は昭和28年に創業し、当時は大工さんを抱え住宅や役所、電電公社（現NTT）等の仕事をしていました。あれから70年以上が過ぎ、現在は公共建築工事を主軸に営業しております。</p>
+        <p>区役所の耐震工事、小学校の外部改修、地下鉄のホーム改修、水道局の施設工事、市立病院の外壁改修など、様々な公共工事を手がけています。</p>
+        <p>工事はサッポロQMSという品質マニュアルに沿って進め、現場担当者は施工管理技士の有資格者です。</p>
+        <p>ご相談などございましたらご連絡ください。社員一同お待ちしております。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="history">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__en">History</span>
+        <h2 class="section-header__ja">沿革</h2>
+      </div>
+      <div class="history__timeline">
+        <div class="history__item">
+          <span class="history__year">1953</span>
+          <p class="history__text">昭和28年 創業。住宅・公共施設の建築工事を開始</p>
+        </div>
+        <div class="history__item">
+          <span class="history__year">—</span>
+          <p class="history__text">公共建築工事を主軸に事業拡大。札幌市発注の建築関係工事で実績を積む</p>
+        </div>
+        <div class="history__item">
+          <span class="history__year">—</span>
+          <p class="history__text">札幌市優良工事施工業者として、通算13回の表彰を受賞</p>
+        </div>
+        <div class="history__item">
+          <span class="history__year">2024</span>
+          <p class="history__text">曙まちづくりセンター新築工事竣工（JV）。令和5年度優良工事表彰受賞</p>
+        </div>
+        <div class="history__item">
+          <span class="history__year">2026</span>
+          <p class="history__text">健康経営優良法人2026（中小規模法人部門）認定</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="qualifications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__en">Qualifications</span>
+        <h2 class="section-header__ja">資格・認定</h2>
+      </div>
+      <div class="qual__grid">
+        <div class="qual__group">
+          <h3 class="qual__group-title">加盟・認定</h3>
+          <ul class="qual__list">
+            <li>RECACO会員事業者（一般社団法人リフォームパートナー協議会・国土交通大臣登録団体）</li>
+            <li>健康経営優良法人2026（中小規模法人部門）</li>
+            <li>札幌SDGs登録企業</li>
+            <li>サッポロQMS（品質マニュアル）準拠</li>
+          </ul>
+        </div>
+        <div class="qual__group">
+          <h3 class="qual__group-title">保有資格</h3>
+          <ul class="qual__list">
+            <li>施工管理技士</li>
+            <li>増改築相談員</li>
+            <li>石綿作業主任者</li>
+            <li>住宅省エネルギー技術者</li>
+            <li>足場特別教育 / フルハーネス特別教育</li>
+            <li>KYTトレーナー</li>
+            <li>二級ボイラー技士</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="company-info">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__en">Company</span>
+        <h2 class="section-header__ja">会社概要</h2>
+      </div>
+      <table class="info-table">
+        <tr><th>社名</th><td>株式会社 三上工務店</td></tr>
+        <tr><th>所在地</th><td>〒064-0922 札幌市中央区南22条西7丁目1-7</td></tr>
+        <tr><th>電話番号</th><td>011-511-1951</td></tr>
+        <tr><th>FAX</th><td>011-511-1967</td></tr>
+        <tr><th>メール</th><td>kkmikami@chive.ocn.ne.jp</td></tr>
+        <tr><th>創業</th><td>昭和28年（1953年）</td></tr>
+        <tr><th>事業内容</th><td>公共建築工事、建築リフォーム、施設修繕</td></tr>
+        <tr><th>営業時間</th><td>平日 9:00〜17:00（定休日: 日曜・祝祭日）</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <Cta />
+
+</Base>
+
+<style>
+  .page-hero {
+    background: var(--c-navy);
+    padding: var(--sp-3xl) 0 var(--sp-xl);
+  }
+  .page-hero__en {
+    font-family: var(--ff-condensed);
+    font-size: var(--fs-small);
+    color: var(--c-gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: var(--sp-xs);
+  }
+  .page-hero__title {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-h1);
+    font-weight: 700;
+    color: var(--c-white);
+  }
+
+  .greeting { padding: var(--sp-4xl) 0; background: var(--c-white); }
+  .greeting__inner {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: var(--sp-xl);
+    align-items: start;
+  }
+  .greeting__photo img {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+  }
+  .greeting__body p {
+    margin-bottom: var(--sp-sm);
+    line-height: 2;
+  }
+
+  .history { padding: var(--sp-4xl) 0; background: var(--c-warm-gray); }
+  .history__timeline { max-width: 700px; margin: 0 auto; }
+  .history__item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--sp-md);
+    padding: var(--sp-md) 0;
+    position: relative;
+  }
+  .history__item + .history__item {
+    border-top: 1px solid rgba(27,42,74,0.1);
+  }
+  .history__year {
+    font-family: var(--ff-condensed);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--c-navy);
+  }
+  .history__text { color: var(--c-text); }
+
+  .qualifications { padding: var(--sp-4xl) 0; background: var(--c-white); }
+  .qual__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-xl);
+  }
+  .qual__group {
+    padding: var(--sp-lg);
+    background: var(--c-warm-gray);
+    border-radius: 6px;
+  }
+  .qual__group-title {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-h3);
+    color: var(--c-navy);
+    margin-bottom: var(--sp-sm);
+  }
+  .qual__list li {
+    padding: 6px 0;
+    font-size: var(--fs-small);
+    color: var(--c-text);
+    line-height: 1.6;
+  }
+  .qual__list li + li { border-top: 1px solid rgba(0,0,0,0.06); }
+
+  .company-info { padding: var(--sp-4xl) 0; background: var(--c-warm-gray); }
+  .info-table {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+  .info-table th, .info-table td {
+    padding: var(--sp-sm);
+    text-align: left;
+    border-bottom: 1px solid rgba(27,42,74,0.1);
+  }
+  .info-table th {
+    width: 140px;
+    font-weight: 700;
+    color: var(--c-navy);
+    font-size: var(--fs-small);
+  }
+  .info-table td { font-size: var(--fs-small); }
+
+  @media (max-width: 768px) {
+    .greeting__inner { grid-template-columns: 1fr; }
+    .greeting__photo img { aspect-ratio: 4/3; max-height: 300px; }
+    .qual__grid { grid-template-columns: 1fr; }
+    .info-table th { width: 100px; }
+  }
+</style>

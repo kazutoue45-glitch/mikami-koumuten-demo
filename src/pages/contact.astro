@@ -1,0 +1,186 @@
+---
+import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Base title="お問い合わせ" description="三上工務店へのお問い合わせ。お見積り・ご相談はお気軽にどうぞ。">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-hero__en">Contact</span>
+      <h1 class="page-hero__title">お問い合わせ</h1>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <p class="contact-section__lead">お見積り依頼、ご質問、ご相談など、お気軽にお問い合わせください。</p>
+
+      <div class="contact-section__grid">
+        <div class="contact-section__form-area">
+          <h2 class="contact-section__sub-title">メールでのお問い合わせ</h2>
+          <form class="contact-form" action="#" method="post">
+            <div class="contact-form__group">
+              <label class="contact-form__label" for="name">お名前 <span class="contact-form__req">必須</span></label>
+              <input type="text" id="name" name="name" class="contact-form__input" required />
+            </div>
+            <div class="contact-form__group">
+              <label class="contact-form__label" for="email">メールアドレス <span class="contact-form__req">必須</span></label>
+              <input type="email" id="email" name="email" class="contact-form__input" required />
+            </div>
+            <div class="contact-form__group">
+              <label class="contact-form__label" for="tel">電話番号</label>
+              <input type="tel" id="tel" name="tel" class="contact-form__input" />
+            </div>
+            <div class="contact-form__group">
+              <label class="contact-form__label" for="type">工事種別</label>
+              <select id="type" name="type" class="contact-form__input">
+                <option value="">選択してください</option>
+                <option value="public">公共建築工事</option>
+                <option value="renovation">住宅リフォーム</option>
+                <option value="repair">修繕・メンテナンス</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+            <div class="contact-form__group">
+              <label class="contact-form__label" for="message">お問い合わせ内容 <span class="contact-form__req">必須</span></label>
+              <textarea id="message" name="message" rows="6" class="contact-form__input" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary contact-form__submit">送信する</button>
+          </form>
+        </div>
+
+        <div class="contact-section__info-area">
+          <h2 class="contact-section__sub-title">お電話でのお問い合わせ</h2>
+          <a href="tel:0115111951" class="contact-section__tel-block">
+            <span class="contact-section__tel-num">011-511-1951</span>
+            <span class="contact-section__tel-time">平日 9:00〜17:00</span>
+          </a>
+
+          <h2 class="contact-section__sub-title contact-section__sub-title--mt">アクセス</h2>
+          <div class="contact-section__map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.5!2d141.3487!3d43.0388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDAyJzE5LjciTiAxNDHCsDIwJzU1LjIiRQ!5e0!3m2!1sja!2sjp!4v1!5m2!1sja!2sjp"
+              width="100%" height="300" style="border:0; border-radius:6px;" allowfullscreen="" loading="lazy"
+              title="三上工務店 地図"
+            ></iframe>
+          </div>
+          <div class="contact-section__address">
+            <p>〒064-0922</p>
+            <p>札幌市中央区南22条西7丁目1-7</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .page-hero {
+    background: var(--c-navy);
+    padding: var(--sp-3xl) 0 var(--sp-xl);
+  }
+  .page-hero__en {
+    font-family: var(--ff-condensed);
+    font-size: var(--fs-small);
+    color: var(--c-gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: var(--sp-xs);
+  }
+  .page-hero__title {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-h1);
+    font-weight: 700;
+    color: var(--c-white);
+  }
+
+  .contact-section {
+    padding: var(--sp-4xl) 0;
+    background: var(--c-warm-gray);
+  }
+  .contact-section__lead {
+    text-align: center;
+    color: var(--c-text-light);
+    margin-bottom: var(--sp-xl);
+  }
+  .contact-section__grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: var(--sp-xl);
+  }
+  .contact-section__sub-title {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-h3);
+    color: var(--c-navy);
+    margin-bottom: var(--sp-md);
+  }
+  .contact-section__sub-title--mt { margin-top: var(--sp-xl); }
+
+  .contact-form__group { margin-bottom: var(--sp-md); }
+  .contact-form__label {
+    display: block;
+    font-size: var(--fs-small);
+    font-weight: 700;
+    color: var(--c-text);
+    margin-bottom: 6px;
+  }
+  .contact-form__req {
+    font-size: 0.7rem;
+    color: var(--c-white);
+    background: var(--c-gold);
+    padding: 2px 6px;
+    border-radius: 2px;
+    margin-left: 4px;
+  }
+  .contact-form__input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: var(--fs-body);
+    font-family: var(--ff-sans);
+    background: var(--c-white);
+    transition: var(--transition);
+  }
+  .contact-form__input:focus {
+    outline: none;
+    border-color: var(--c-navy);
+  }
+  textarea.contact-form__input { resize: vertical; }
+  .contact-form__submit {
+    width: 100%;
+    font-size: 1.05rem;
+    padding: 16px;
+  }
+
+  .contact-section__tel-block {
+    display: block;
+    text-align: center;
+    padding: var(--sp-lg);
+    background: var(--c-white);
+    border-radius: 8px;
+  }
+  .contact-section__tel-num {
+    font-family: var(--ff-condensed);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--c-navy);
+    display: block;
+  }
+  .contact-section__tel-time {
+    font-size: var(--fs-small);
+    color: var(--c-text-light);
+  }
+
+  .contact-section__map { margin-bottom: var(--sp-sm); }
+  .contact-section__address {
+    font-size: var(--fs-small);
+    color: var(--c-text-light);
+  }
+
+  @media (max-width: 768px) {
+    .contact-section__grid { grid-template-columns: 1fr; }
+  }
+</style>

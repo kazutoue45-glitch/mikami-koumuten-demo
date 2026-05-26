@@ -1,0 +1,321 @@
+---
+import Base from '../layouts/Base.astro';
+import Cta from '../components/Cta.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Base title="ホーム">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero__number" aria-hidden="true">73</div>
+    <div class="hero__content">
+      <p class="hero__catch">創業昭和28年。<br />札幌の街を守り続けて、73年。</p>
+      <p class="hero__award">札幌市優良工事表彰 通算13回受賞</p>
+      <a href={`${base}contact/`} class="btn btn--gold hero__cta">まずはご相談ください</a>
+    </div>
+    <div class="hero__photo">
+      <img src={`${base}images/hyoushou-shiki.jpg`} alt="札幌市都市局 令和5年度優良工事施工業者表彰状贈呈式" width="600" height="800" />
+    </div>
+  </section>
+
+  <!-- ===== SERVICE ===== -->
+  <section class="service">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__en">Service</span>
+        <h2 class="section-header__ja">事業内容</h2>
+      </div>
+      <div class="service__grid">
+        <div class="service__item">
+          <div class="service__icon-wrap">
+            <span class="service__icon-num">01</span>
+          </div>
+          <h3 class="service__title">公共建築工事</h3>
+          <p class="service__text">区役所の耐震工事、小学校の外部改修、地下鉄のホーム改修、市立病院の外壁改修など。札幌市の公共インフラを支えています。</p>
+        </div>
+        <div class="service__item">
+          <div class="service__icon-wrap">
+            <span class="service__icon-num">02</span>
+          </div>
+          <h3 class="service__title">施設修繕</h3>
+          <p class="service__text">札幌市東部エリアの郵便局122局の修繕指定業者。NTTドコモ基地局の新設工事も15局以上手がけています。</p>
+        </div>
+        <div class="service__item">
+          <div class="service__icon-wrap">
+            <span class="service__icon-num">03</span>
+          </div>
+          <h3 class="service__title">個人住宅リフォーム</h3>
+          <p class="service__text">公共工事で培った品質基準で、ご自宅のリフォームにも対応。大きな工事から小さな修繕まで、お気軽にご相談ください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WORKS HIGHLIGHT ===== -->
+  <section class="works-hl">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__en">Works</span>
+        <h2 class="section-header__ja">施工実績</h2>
+      </div>
+      <div class="works-hl__list">
+        <div class="works-hl__item">
+          <div class="works-hl__img-wrap">
+            <img src={`${base}images/shasha.jpg`} alt="三上工務店 社屋" width="600" height="400" loading="lazy" />
+          </div>
+          <div class="works-hl__body">
+            <span class="works-hl__tag">公共建築</span>
+            <h3 class="works-hl__title">曙まちづくりセンター新築工事</h3>
+            <p class="works-hl__meta">2024年10月竣工（JV）</p>
+          </div>
+        </div>
+      </div>
+      <div class="works-hl__more">
+        <a href={`${base}works/`} class="btn btn--primary">施工実績をもっと見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROOF ===== -->
+  <section class="proof">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__en">Trust</span>
+        <h2 class="section-header__ja">信頼の証</h2>
+      </div>
+      <div class="proof__numbers">
+        <div class="proof__num-item">
+          <span class="proof__num-value">1953</span>
+          <span class="proof__num-label">年創業</span>
+        </div>
+        <div class="proof__num-item">
+          <span class="proof__num-value">13</span>
+          <span class="proof__num-label">回 札幌市優良工事表彰</span>
+        </div>
+        <div class="proof__num-item">
+          <span class="proof__num-value">122</span>
+          <span class="proof__num-label">局 郵便局修繕指定</span>
+        </div>
+      </div>
+      <div class="proof__badges">
+        <img src={`${base}images/kenkou-keiei.jpg`} alt="健康経営優良法人2026" width="200" loading="lazy" />
+        <img src={`${base}images/sapporo-sdgs.jpg`} alt="SAPPORO SDGs" width="150" loading="lazy" />
+        <img src={`${base}images/sapporo-qms.gif`} alt="サッポロQMS" width="80" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <Cta />
+
+</Base>
+
+<style>
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    background: var(--c-navy);
+    min-height: 85vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+  .hero__number {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    font-family: var(--ff-condensed);
+    font-size: var(--fs-number-deco);
+    font-weight: 700;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .hero__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--sp-3xl) var(--sp-xl) var(--sp-3xl) 8%;
+  }
+  .hero__catch {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-hero);
+    font-weight: 700;
+    color: var(--c-white);
+    line-height: 1.5;
+    margin-bottom: var(--sp-md);
+  }
+  .hero__award {
+    font-family: var(--ff-sans);
+    font-size: 1.05rem;
+    color: var(--c-gold);
+    font-weight: 700;
+    margin-bottom: var(--sp-lg);
+    letter-spacing: 0.05em;
+  }
+  .hero__cta { align-self: flex-start; }
+
+  .hero__photo {
+    position: relative;
+    clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+    min-height: 500px;
+  }
+  .hero__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+    .hero__content {
+      padding: var(--sp-3xl) var(--sp-md) var(--sp-xl);
+      text-align: center;
+      align-items: center;
+    }
+    .hero__photo {
+      clip-path: none;
+      max-height: 50vh;
+    }
+    .hero__number { font-size: 6rem; left: 50%; transform: translate(-50%, -50%); }
+  }
+
+  /* ===== SERVICE ===== */
+  .service {
+    padding: var(--sp-4xl) 0;
+    background: var(--c-white);
+  }
+  .service__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-lg);
+  }
+  .service__item {
+    padding: var(--sp-xl) var(--sp-md);
+    background: var(--c-warm-gray);
+    border-radius: 6px;
+    text-align: center;
+  }
+  .service__icon-wrap {
+    margin-bottom: var(--sp-sm);
+  }
+  .service__icon-num {
+    font-family: var(--ff-condensed);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--c-gold);
+    opacity: 0.6;
+  }
+  .service__title {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    color: var(--c-navy);
+    margin-bottom: var(--sp-sm);
+  }
+  .service__text {
+    font-size: var(--fs-small);
+    color: var(--c-text-light);
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .service__grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== WORKS HIGHLIGHT ===== */
+  .works-hl {
+    padding: var(--sp-4xl) 0;
+    background: var(--c-warm-gray);
+  }
+  .works-hl__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-xl);
+    align-items: center;
+  }
+  .works-hl__img-wrap {
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .works-hl__img-wrap img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+  }
+  .works-hl__tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--c-gold);
+    background: rgba(184,134,11,0.1);
+    padding: 4px 12px;
+    border-radius: 3px;
+    margin-bottom: var(--sp-sm);
+  }
+  .works-hl__title {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    color: var(--c-navy);
+    margin-bottom: var(--sp-xs);
+  }
+  .works-hl__meta {
+    font-size: var(--fs-small);
+    color: var(--c-text-light);
+  }
+  .works-hl__more {
+    text-align: center;
+    margin-top: var(--sp-xl);
+  }
+
+  @media (max-width: 768px) {
+    .works-hl__item { grid-template-columns: 1fr; }
+  }
+
+  /* ===== PROOF ===== */
+  .proof {
+    padding: var(--sp-4xl) 0;
+    background: var(--c-white);
+  }
+  .proof__numbers {
+    display: flex;
+    justify-content: center;
+    gap: var(--sp-2xl);
+    margin-bottom: var(--sp-xl);
+    flex-wrap: wrap;
+  }
+  .proof__num-item { text-align: center; }
+  .proof__num-value {
+    font-family: var(--ff-condensed);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--c-navy);
+    line-height: 1.1;
+    display: block;
+  }
+  .proof__num-label {
+    font-size: var(--fs-small);
+    color: var(--c-text-light);
+    display: block;
+    margin-top: 4px;
+  }
+  .proof__badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--sp-lg);
+    flex-wrap: wrap;
+    padding: var(--sp-lg);
+    background: var(--c-warm-gray);
+    border-radius: 8px;
+  }
+</style>

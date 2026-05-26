@@ -1,0 +1,181 @@
+---
+import Base from '../layouts/Base.astro';
+import Cta from '../components/Cta.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Base title="施工実績" description="三上工務店の施工実績。公共建築工事から個人住宅リフォームまで。">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-hero__en">Works</span>
+      <h1 class="page-hero__title">施工実績</h1>
+    </div>
+  </section>
+
+  <section class="works-cat">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__en">Public Works</span>
+        <h2 class="section-header__ja">公共建築工事</h2>
+      </div>
+      <p class="works-cat__lead">札幌市発注の建築関係工事で通算13回の表彰を受けた実績があります。</p>
+      <div class="works-cat__grid">
+        <div class="works-cat__item">
+          <img src={`${base}images/shasha.jpg`} alt="施工実績" width="400" height="300" loading="lazy" />
+          <h3>曙まちづくりセンター新築</h3>
+          <p>2024年10月竣工（JV）</p>
+        </div>
+      </div>
+      <div class="works-cat__examples">
+        <h3 class="works-cat__sub-title">その他の主な施工実績</h3>
+        <ul class="works-cat__list">
+          <li>区役所の耐震改修工事</li>
+          <li>小学校の外部改修工事</li>
+          <li>地下鉄ホームの改修工事</li>
+          <li>水道局施設の工事</li>
+          <li>市立病院の外壁改修工事</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="works-cat works-cat--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__en">Maintenance</span>
+        <h2 class="section-header__ja">施設修繕</h2>
+      </div>
+      <div class="works-cat__highlight">
+        <div class="works-cat__highlight-num">
+          <span class="works-cat__big-num">122</span>
+          <span class="works-cat__big-label">局</span>
+        </div>
+        <div class="works-cat__highlight-text">
+          <p>札幌市東部エリアの郵便局<strong>122局</strong>の修繕業者に指定されています。日本郵便株式会社様より指定を受け、各局の修繕・メンテナンスを担当しています。</p>
+          <p>また、NTTドコモの携帯電話基地局の新設工事を<strong>15局以上</strong>手がけました。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="works-cat">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__en">Renovation</span>
+        <h2 class="section-header__ja">個人住宅リフォーム</h2>
+      </div>
+      <p class="works-cat__lead">公共工事で培った品質基準を、ご自宅のリフォームにも。大きな工事から、ちょっとした修繕まで対応しています。</p>
+      <div class="works-cat__examples">
+        <ul class="works-cat__list">
+          <li>北海道 道営住宅解体工事</li>
+          <li>札幌市住宅管理公社 地区センター外部改修工事</li>
+          <li>各官庁 修繕・その他</li>
+          <li>個人住宅 リフォーム・その他</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <Cta />
+
+</Base>
+
+<style>
+  .page-hero {
+    background: var(--c-navy);
+    padding: var(--sp-3xl) 0 var(--sp-xl);
+  }
+  .page-hero__en {
+    font-family: var(--ff-condensed);
+    font-size: var(--fs-small);
+    color: var(--c-gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: var(--sp-xs);
+  }
+  .page-hero__title {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-h1);
+    font-weight: 700;
+    color: var(--c-white);
+  }
+
+  .works-cat { padding: var(--sp-4xl) 0; background: var(--c-white); }
+  .works-cat--alt { background: var(--c-warm-gray); }
+
+  .works-cat__lead {
+    text-align: center;
+    color: var(--c-text-light);
+    margin-bottom: var(--sp-xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .works-cat__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--sp-lg);
+    margin-bottom: var(--sp-xl);
+  }
+  .works-cat__item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: var(--sp-sm);
+  }
+  .works-cat__item h3 {
+    font-family: var(--ff-serif);
+    font-size: 1.1rem;
+    color: var(--c-navy);
+    margin-bottom: 4px;
+  }
+  .works-cat__item p { font-size: var(--fs-small); color: var(--c-text-light); }
+
+  .works-cat__highlight {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--sp-xl);
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .works-cat__highlight-num { text-align: center; }
+  .works-cat__big-num {
+    font-family: var(--ff-condensed);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 700;
+    color: var(--c-navy);
+    display: block;
+    line-height: 1;
+  }
+  .works-cat__big-label {
+    font-size: 1.2rem;
+    color: var(--c-text-light);
+  }
+  .works-cat__highlight-text p {
+    margin-bottom: var(--sp-sm);
+    line-height: 1.8;
+  }
+  .works-cat__highlight-text strong { color: var(--c-navy); }
+
+  .works-cat__sub-title {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-h3);
+    color: var(--c-navy);
+    margin-bottom: var(--sp-sm);
+    text-align: center;
+  }
+  .works-cat__examples { max-width: 600px; margin: 0 auto; }
+  .works-cat__list li {
+    padding: var(--sp-sm) 0;
+    font-size: var(--fs-body);
+    color: var(--c-text);
+  }
+  .works-cat__list li + li { border-top: 1px solid rgba(0,0,0,0.06); }
+
+  @media (max-width: 768px) {
+    .works-cat__highlight { grid-template-columns: 1fr; text-align: center; }
+  }
+</style>

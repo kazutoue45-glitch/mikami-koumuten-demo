@@ -1,0 +1,155 @@
+---
+const base = import.meta.env.BASE_URL;
+const nav = [
+  { label: 'ホーム', href: `${base}` },
+  { label: '当社について', href: `${base}about/` },
+  { label: '施工実績', href: `${base}works/` },
+  { label: 'お問い合わせ', href: `${base}contact/` },
+];
+---
+<header class="header">
+  <div class="header__inner">
+    <a href={base} class="header__logo">
+      <span class="header__logo-main">株式会社 三上工務店</span>
+      <span class="header__logo-sub">MIKAMI Construction since 1953</span>
+    </a>
+    <nav class="header__nav" id="globalNav">
+      {nav.map(item => (
+        <a href={item.href} class="header__nav-link">{item.label}</a>
+      ))}
+    </nav>
+    <div class="header__right">
+      <a href="tel:0115111951" class="header__tel">
+        <span class="header__tel-num">011-511-1951</span>
+        <span class="header__tel-time">平日 9:00〜17:00</span>
+      </a>
+      <a href={`${base}contact/`} class="btn btn--primary header__cta">お問い合わせ</a>
+    </div>
+    <button class="header__hamburger" id="hamburgerBtn" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--c-white);
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  }
+  .header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--sp-md);
+    display: flex;
+    align-items: center;
+    gap: var(--sp-lg);
+    height: 80px;
+  }
+  .header__logo { flex-shrink: 0; }
+  .header__logo-main {
+    font-family: var(--ff-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--c-navy);
+    display: block;
+    line-height: 1.2;
+  }
+  .header__logo-sub {
+    font-family: var(--ff-condensed);
+    font-size: 0.7rem;
+    color: var(--c-gold);
+    letter-spacing: 0.1em;
+  }
+  .header__nav {
+    display: flex;
+    gap: var(--sp-md);
+    margin-left: auto;
+  }
+  .header__nav-link {
+    font-size: var(--fs-small);
+    font-weight: 500;
+    color: var(--c-text);
+    padding: 8px 4px;
+    position: relative;
+    transition: var(--transition);
+  }
+  .header__nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--c-gold);
+    transition: var(--transition);
+  }
+  .header__nav-link:hover::after { width: 100%; }
+  .header__nav-link:hover { color: var(--c-navy); }
+
+  .header__right {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-sm);
+    flex-shrink: 0;
+  }
+  .header__tel { text-align: right; }
+  .header__tel-num {
+    font-family: var(--ff-condensed);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--c-navy);
+    letter-spacing: 0.02em;
+    display: block;
+    line-height: 1.1;
+  }
+  .header__tel-time {
+    font-size: 0.7rem;
+    color: var(--c-text-light);
+  }
+  .header__cta { font-size: var(--fs-small); padding: 10px 20px; }
+
+  .header__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .header__hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--c-navy);
+    transition: var(--transition);
+  }
+
+  @media (max-width: 768px) {
+    .header__inner { height: 60px; }
+    .header__nav { display: none; }
+    .header__nav.is-open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: var(--c-white);
+      padding: var(--sp-md);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .header__tel { display: none; }
+    .header__cta { display: none; }
+    .header__hamburger { display: flex; }
+  }
+</style>
+
+<script>
+  document.getElementById('hamburgerBtn')?.addEventListener('click', () => {
+    document.getElementById('globalNav')?.classList.toggle('is-open');
+  });
+</script>
