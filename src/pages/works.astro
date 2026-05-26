@@ -21,9 +21,14 @@ const base = import.meta.env.BASE_URL;
       <p class="works-cat__lead">札幌市発注の建築関係工事で通算13回の表彰を受けた実績があります。</p>
       <div class="works-cat__grid">
         <div class="works-cat__item">
-          <img src={`${base}images/shasha.jpg`} alt="施工実績" width="400" height="300" loading="lazy" />
+          <img src={`${base}images/community-center.png`} alt="曙まちづくりセンター新築" width="800" height="600" loading="lazy" />
           <h3>曙まちづくりセンター新築</h3>
           <p>2024年10月竣工（JV）</p>
+        </div>
+        <div class="works-cat__item">
+          <img src={`${base}images/public-works.png`} alt="公共施設の外部改修" width="800" height="600" loading="lazy" />
+          <h3>公共施設の外部改修工事</h3>
+          <p>区役所・学校・病院・水道局施設など</p>
         </div>
       </div>
       <div class="works-cat__examples">
@@ -82,13 +87,13 @@ const base = import.meta.env.BASE_URL;
 
 <style>
   .page-hero {
-    background: var(--c-navy);
+    background: var(--c-primary-dark);
     padding: var(--sp-3xl) 0 var(--sp-xl);
   }
   .page-hero__en {
     font-family: var(--ff-condensed);
     font-size: var(--fs-small);
-    color: var(--c-gold);
+    color: var(--c-primary);
     letter-spacing: 0.15em;
     text-transform: uppercase;
     display: block;
@@ -128,7 +133,7 @@ const base = import.meta.env.BASE_URL;
   .works-cat__item h3 {
     font-family: var(--ff-serif);
     font-size: 1.1rem;
-    color: var(--c-navy);
+    color: var(--c-primary-dark);
     margin-bottom: 4px;
   }
   .works-cat__item p { font-size: var(--fs-small); color: var(--c-text-light); }
@@ -146,7 +151,7 @@ const base = import.meta.env.BASE_URL;
     font-family: var(--ff-condensed);
     font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 700;
-    color: var(--c-navy);
+    color: var(--c-primary-dark);
     display: block;
     line-height: 1;
   }
@@ -158,12 +163,12 @@ const base = import.meta.env.BASE_URL;
     margin-bottom: var(--sp-sm);
     line-height: 1.8;
   }
-  .works-cat__highlight-text strong { color: var(--c-navy); }
+  .works-cat__highlight-text strong { color: var(--c-primary-dark); }
 
   .works-cat__sub-title {
     font-family: var(--ff-serif);
     font-size: var(--fs-h3);
-    color: var(--c-navy);
+    color: var(--c-primary-dark);
     margin-bottom: var(--sp-sm);
     text-align: center;
   }

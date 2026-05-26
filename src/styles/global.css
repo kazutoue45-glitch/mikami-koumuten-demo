@@ -3,13 +3,14 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --c-navy: #1B2A4A;
-  --c-gold: #B8860B;
-  --c-warm-gray: #F5F5F0;
+  --c-primary: #00837C;
+  --c-primary-dark: #005F5A;
+  --c-primary-light: #E6F5F3;
+  --c-accent: #2C2C2C;
+  --c-warm-gray: #F5F2ED;
   --c-white: #FFFFFF;
-  --c-text: #333333;
+  --c-text: #2C2C2C;
   --c-text-light: #666666;
-  --c-navy-light: #2A3D66;
 
   --ff-serif: 'Noto Serif JP', serif;
   --ff-sans: 'Noto Sans JP', sans-serif;
@@ -59,7 +60,7 @@ ul { list-style: none; }
   font-family: var(--ff-condensed);
   font-size: var(--fs-small);
   font-weight: 600;
-  color: var(--c-gold);
+  color: var(--c-primary);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   display: block;
@@ -69,7 +70,7 @@ ul { list-style: none; }
   font-family: var(--ff-serif);
   font-size: var(--fs-h2);
   font-weight: 700;
-  color: var(--c-navy);
+  color: var(--c-primary-dark);
   line-height: 1.4;
 }
 
@@ -85,14 +86,14 @@ ul { list-style: none; }
   border: none;
 }
 .btn--primary {
-  background: var(--c-navy);
+  background: var(--c-primary-dark);
   color: var(--c-white);
 }
 .btn--primary:hover {
-  background: var(--c-navy-light);
+  background: var(--c-primary);
 }
 .btn--gold {
-  background: var(--c-gold);
+  background: var(--c-primary);
   color: var(--c-white);
 }
 .btn--gold:hover {

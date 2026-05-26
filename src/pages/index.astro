@@ -5,20 +5,17 @@ const base = import.meta.env.BASE_URL;
 ---
 <Base title="ホーム">
 
-  <!-- ===== HERO ===== -->
   <section class="hero">
+    <img src={`${base}images/hero.png`} alt="" class="hero__bg" />
+    <div class="hero__overlay"></div>
     <div class="hero__number" aria-hidden="true">73</div>
-    <div class="hero__content">
+    <div class="hero__content container">
       <p class="hero__catch">創業昭和28年。<br />札幌の街を守り続けて、73年。</p>
       <p class="hero__award">札幌市優良工事表彰 通算13回受賞</p>
-      <a href={`${base}contact/`} class="btn btn--gold hero__cta">まずはご相談ください</a>
-    </div>
-    <div class="hero__photo">
-      <img src={`${base}images/hyoushou-shiki.jpg`} alt="札幌市都市局 令和5年度優良工事施工業者表彰状贈呈式" width="600" height="800" />
+      <a href={`${base}contact/`} class="btn btn--primary hero__cta">まずはご相談ください</a>
     </div>
   </section>
 
-  <!-- ===== SERVICE ===== -->
   <section class="service">
     <div class="container">
       <div class="section-header">
@@ -26,32 +23,37 @@ const base = import.meta.env.BASE_URL;
         <h2 class="section-header__ja">事業内容</h2>
       </div>
       <div class="service__grid">
-        <div class="service__item">
-          <div class="service__icon-wrap">
-            <span class="service__icon-num">01</span>
+        <a href={`${base}works/`} class="service__item">
+          <div class="service__img-wrap">
+            <img src={`${base}images/public-works.png`} alt="公共建築工事" width="800" height="600" loading="lazy" />
           </div>
-          <h3 class="service__title">公共建築工事</h3>
-          <p class="service__text">区役所の耐震工事、小学校の外部改修、地下鉄のホーム改修、市立病院の外壁改修など。札幌市の公共インフラを支えています。</p>
-        </div>
-        <div class="service__item">
-          <div class="service__icon-wrap">
-            <span class="service__icon-num">02</span>
+          <div class="service__body">
+            <h3 class="service__title">公共建築工事</h3>
+            <p class="service__text">区役所の耐震工事、小学校の外部改修、地下鉄のホーム改修、市立病院の外壁改修。札幌市の公共インフラを支えています。</p>
           </div>
-          <h3 class="service__title">施設修繕</h3>
-          <p class="service__text">札幌市東部エリアの郵便局122局の修繕指定業者。NTTドコモ基地局の新設工事も15局以上手がけています。</p>
-        </div>
-        <div class="service__item">
-          <div class="service__icon-wrap">
-            <span class="service__icon-num">03</span>
+        </a>
+        <a href={`${base}works/`} class="service__item">
+          <div class="service__img-wrap">
+            <img src={`${base}images/postal.png`} alt="施設修繕" width="800" height="600" loading="lazy" />
           </div>
-          <h3 class="service__title">個人住宅リフォーム</h3>
-          <p class="service__text">公共工事で培った品質基準で、ご自宅のリフォームにも対応。大きな工事から小さな修繕まで、お気軽にご相談ください。</p>
-        </div>
+          <div class="service__body">
+            <h3 class="service__title">施設修繕</h3>
+            <p class="service__text">札幌市東部エリアの郵便局122局の修繕指定業者。NTTドコモ基地局の新設工事も15局以上手がけています。</p>
+          </div>
+        </a>
+        <a href={`${base}works/`} class="service__item">
+          <div class="service__img-wrap">
+            <img src={`${base}images/renovation.png`} alt="個人住宅リフォーム" width="800" height="600" loading="lazy" />
+          </div>
+          <div class="service__body">
+            <h3 class="service__title">個人住宅リフォーム</h3>
+            <p class="service__text">公共工事で培った品質基準で、ご自宅のリフォームにも対応。大きな工事から小さな修繕まで、お気軽にご相談ください。</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ===== WORKS HIGHLIGHT ===== -->
   <section class="works-hl">
     <div class="container">
       <div class="section-header">
@@ -61,12 +63,24 @@ const base = import.meta.env.BASE_URL;
       <div class="works-hl__list">
         <div class="works-hl__item">
           <div class="works-hl__img-wrap">
-            <img src={`${base}images/shasha.jpg`} alt="三上工務店 社屋" width="600" height="400" loading="lazy" />
+            <img src={`${base}images/community-center.png`} alt="曙まちづくりセンター新築工事" width="800" height="600" loading="lazy" />
           </div>
           <div class="works-hl__body">
             <span class="works-hl__tag">公共建築</span>
             <h3 class="works-hl__title">曙まちづくりセンター新築工事</h3>
             <p class="works-hl__meta">2024年10月竣工（JV）</p>
+            <p class="works-hl__desc">札幌市都市局から令和5年度優良工事施工業者として表彰を受けた代表的な施工実績です。</p>
+          </div>
+        </div>
+        <div class="works-hl__item works-hl__item--reverse">
+          <div class="works-hl__img-wrap">
+            <img src={`${base}images/hyoushou-shiki.jpg`} alt="札幌市都市局 令和5年度優良工事施工業者表彰" width="600" height="800" loading="lazy" />
+          </div>
+          <div class="works-hl__body">
+            <span class="works-hl__tag">表彰</span>
+            <h3 class="works-hl__title">札幌市優良工事表彰 通算13回</h3>
+            <p class="works-hl__meta">直近：令和5年度（2024年6月20日受賞）</p>
+            <p class="works-hl__desc">札幌市都市局より、優良工事施工業者として通算13回の表彰。70年以上にわたる品質の証です。</p>
           </div>
         </div>
       </div>
@@ -76,7 +90,6 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <!-- ===== PROOF ===== -->
   <section class="proof">
     <div class="container">
       <div class="section-header">
@@ -105,41 +118,57 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <!-- ===== CTA ===== -->
   <Cta />
 
 </Base>
 
 <style>
-  /* ===== HERO ===== */
   .hero {
     position: relative;
-    background: var(--c-navy);
-    min-height: 85vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    min-height: 90vh;
+    display: flex;
+    align-items: flex-end;
     overflow: hidden;
+  }
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+    z-index: 0;
+  }
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(0,55,50,0.85) 0%,
+      rgba(0,55,50,0.6) 40%,
+      rgba(0,55,50,0.15) 70%,
+      transparent 100%
+    );
+    z-index: 1;
   }
   .hero__number {
     position: absolute;
     top: 50%;
-    left: 5%;
+    left: 3%;
     transform: translateY(-50%);
     font-family: var(--ff-condensed);
     font-size: var(--fs-number-deco);
     font-weight: 700;
-    color: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.07);
     line-height: 1;
     pointer-events: none;
-    z-index: 1;
+    z-index: 2;
   }
   .hero__content {
     position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: var(--sp-3xl) var(--sp-xl) var(--sp-3xl) 8%;
+    z-index: 3;
+    padding-bottom: var(--sp-3xl);
+    padding-top: 30vh;
   }
   .hero__catch {
     font-family: var(--ff-serif);
@@ -148,47 +177,26 @@ const base = import.meta.env.BASE_URL;
     color: var(--c-white);
     line-height: 1.5;
     margin-bottom: var(--sp-md);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.2);
   }
   .hero__award {
-    font-family: var(--ff-sans);
     font-size: 1.05rem;
-    color: var(--c-gold);
+    color: #7EDCD2;
     font-weight: 700;
     margin-bottom: var(--sp-lg);
     letter-spacing: 0.05em;
   }
-  .hero__cta { align-self: flex-start; }
-
-  .hero__photo {
-    position: relative;
-    clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
-    min-height: 500px;
-  }
-  .hero__photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 20%;
-  }
 
   @media (max-width: 768px) {
-    .hero {
-      grid-template-columns: 1fr;
-      min-height: auto;
+    .hero { min-height: 70vh; }
+    .hero__bg { object-position: 70% center; }
+    .hero__overlay {
+      background: linear-gradient(to top, rgba(0,55,50,0.9) 0%, rgba(0,55,50,0.4) 60%, transparent 100%);
     }
-    .hero__content {
-      padding: var(--sp-3xl) var(--sp-md) var(--sp-xl);
-      text-align: center;
-      align-items: center;
-    }
-    .hero__photo {
-      clip-path: none;
-      max-height: 50vh;
-    }
-    .hero__number { font-size: 6rem; left: 50%; transform: translate(-50%, -50%); }
+    .hero__content { padding-top: 40vh; text-align: left; }
+    .hero__number { font-size: 5rem; }
   }
 
-  /* ===== SERVICE ===== */
   .service {
     padding: var(--sp-4xl) 0;
     background: var(--c-white);
@@ -199,64 +207,65 @@ const base = import.meta.env.BASE_URL;
     gap: var(--sp-lg);
   }
   .service__item {
-    padding: var(--sp-xl) var(--sp-md);
-    background: var(--c-warm-gray);
+    display: block;
+    overflow: hidden;
     border-radius: 6px;
-    text-align: center;
+    background: var(--c-warm-gray);
+    transition: var(--transition);
   }
-  .service__icon-wrap {
-    margin-bottom: var(--sp-sm);
+  .service__item:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .service__img-wrap { overflow: hidden; }
+  .service__img-wrap img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    transition: transform 0.4s ease;
   }
-  .service__icon-num {
-    font-family: var(--ff-condensed);
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--c-gold);
-    opacity: 0.6;
-  }
+  .service__item:hover .service__img-wrap img { transform: scale(1.04); }
+  .service__body { padding: var(--sp-md); }
   .service__title {
     font-family: var(--ff-serif);
     font-size: var(--fs-h3);
     font-weight: 700;
-    color: var(--c-navy);
-    margin-bottom: var(--sp-sm);
+    color: var(--c-primary-dark);
+    margin-bottom: var(--sp-xs);
   }
   .service__text {
     font-size: var(--fs-small);
     color: var(--c-text-light);
     line-height: 1.8;
   }
-
   @media (max-width: 768px) {
     .service__grid { grid-template-columns: 1fr; }
   }
 
-  /* ===== WORKS HIGHLIGHT ===== */
   .works-hl {
     padding: var(--sp-4xl) 0;
     background: var(--c-warm-gray);
   }
   .works-hl__item {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     gap: var(--sp-xl);
     align-items: center;
+    margin-bottom: var(--sp-xl);
   }
-  .works-hl__img-wrap {
-    border-radius: 6px;
-    overflow: hidden;
-  }
+  .works-hl__item--reverse { grid-template-columns: 1fr 1.2fr; }
+  .works-hl__item--reverse .works-hl__img-wrap { order: 2; }
+  .works-hl__item--reverse .works-hl__body { order: 1; }
+  .works-hl__img-wrap { border-radius: 6px; overflow: hidden; }
   .works-hl__img-wrap img {
     width: 100%;
-    aspect-ratio: 3/2;
+    aspect-ratio: 4/3;
     object-fit: cover;
   }
+  .works-hl__item--reverse .works-hl__img-wrap img { aspect-ratio: 3/4; }
   .works-hl__tag {
     display: inline-block;
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--c-gold);
-    background: rgba(184,134,11,0.1);
+    color: var(--c-primary);
+    background: var(--c-primary-light);
     padding: 4px 12px;
     border-radius: 3px;
     margin-bottom: var(--sp-sm);
@@ -265,27 +274,24 @@ const base = import.meta.env.BASE_URL;
     font-family: var(--ff-serif);
     font-size: var(--fs-h3);
     font-weight: 700;
-    color: var(--c-navy);
+    color: var(--c-primary-dark);
     margin-bottom: var(--sp-xs);
   }
   .works-hl__meta {
     font-size: var(--fs-small);
     color: var(--c-text-light);
+    margin-bottom: var(--sp-sm);
   }
-  .works-hl__more {
-    text-align: center;
-    margin-top: var(--sp-xl);
-  }
-
+  .works-hl__desc { font-size: var(--fs-small); color: var(--c-text); line-height: 1.8; }
+  .works-hl__more { text-align: center; margin-top: var(--sp-lg); }
   @media (max-width: 768px) {
-    .works-hl__item { grid-template-columns: 1fr; }
+    .works-hl__item,
+    .works-hl__item--reverse { grid-template-columns: 1fr; }
+    .works-hl__item--reverse .works-hl__img-wrap { order: 0; }
+    .works-hl__item--reverse .works-hl__body { order: 0; }
   }
 
-  /* ===== PROOF ===== */
-  .proof {
-    padding: var(--sp-4xl) 0;
-    background: var(--c-white);
-  }
+  .proof { padding: var(--sp-4xl) 0; background: var(--c-white); }
   .proof__numbers {
     display: flex;
     justify-content: center;
@@ -298,7 +304,7 @@ const base = import.meta.env.BASE_URL;
     font-family: var(--ff-condensed);
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
-    color: var(--c-navy);
+    color: var(--c-primary-dark);
     line-height: 1.1;
     display: block;
   }
