@@ -6,37 +6,15 @@ const base = import.meta.env.BASE_URL;
 <Base title="ホーム">
 
   <section class="hero">
-    <div class="hero__inner">
-      <div class="hero__left">
-        <div class="hero__number-block">
-          <span class="hero__73">73</span>
-          <span class="hero__years">years</span>
-        </div>
-        <p class="hero__catch">創業昭和28年。<br />札幌の街を、確かな技術で<br />守り続けて。</p>
-        <div class="hero__badges">
-          <div class="hero__badge">
-            <span class="hero__badge-num">73</span>
-            <span class="hero__badge-label">年の歴史</span>
-          </div>
-          <div class="hero__badge">
-            <span class="hero__badge-num">13</span>
-            <span class="hero__badge-label">回 市表彰</span>
-          </div>
-          <div class="hero__badge">
-            <span class="hero__badge-num">122</span>
-            <span class="hero__badge-label">局 修繕指定</span>
-          </div>
-        </div>
-        <a href={`${base}contact/`} class="btn btn--primary hero__cta">まずはご相談ください</a>
+    <img src={`${base}images/hyoushou-shiki.jpg`} alt="" class="hero__bg" />
+    <div class="hero__gradient"></div>
+    <div class="hero__73" aria-hidden="true">73</div>
+    <div class="hero__content">
+      <p class="hero__catch">創業昭和28年。<br />札幌の街を守り続けて。</p>
+      <div class="hero__award-row">
+        <span class="hero__award-badge">札幌市優良工事表彰 通算<strong>13</strong>回受賞</span>
       </div>
-      <div class="hero__right">
-        <div class="hero__photo-frame">
-          <img src={`${base}images/hyoushou-shiki.jpg`} alt="札幌市都市局 令和5年度優良工事施工業者表彰状贈呈式" width="600" height="800" />
-        </div>
-        <div class="hero__award-tag">
-          <span class="hero__award-text">札幌市優良工事表彰 通算<strong>13</strong>回受賞</span>
-        </div>
-      </div>
+      <a href={`${base}contact/`} class="btn btn--primary hero__cta">無料で相談してみる</a>
     </div>
   </section>
 
@@ -135,109 +113,92 @@ const base = import.meta.env.BASE_URL;
 
 <style>
   .hero {
-    background: var(--c-warm-gray);
-    padding: var(--sp-xl) 0 var(--sp-3xl);
-  }
-  .hero__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--sp-md);
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: var(--sp-xl);
-    align-items: center;
-  }
-  .hero__number-block {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 900px;
+    overflow: hidden;
     display: flex;
-    align-items: baseline;
-    gap: var(--sp-sm);
-    margin-bottom: var(--sp-md);
+    align-items: flex-end;
+  }
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+    z-index: 0;
+  }
+  .hero__gradient {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(to top, rgba(0,80,75,0.8) 0%, rgba(0,80,75,0.4) 35%, transparent 65%),
+      linear-gradient(to right, rgba(0,80,75,0.3) 0%, transparent 50%);
   }
   .hero__73 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
     font-family: var(--ff-condensed);
-    font-size: clamp(8rem, 18vw, 14rem);
+    font-size: clamp(14rem, 35vw, 28rem);
     font-weight: 700;
-    color: var(--c-primary);
-    line-height: 0.85;
-    letter-spacing: -0.03em;
+    color: rgba(255,255,255,0.45);
+    line-height: 0.8;
+    pointer-events: none;
+    z-index: 2;
+    letter-spacing: -0.04em;
+    mix-blend-mode: overlay;
+    text-shadow: 0 0 80px rgba(255,255,255,0.3);
   }
-  .hero__years {
-    font-family: var(--ff-condensed);
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    font-weight: 600;
-    color: var(--c-primary);
-    opacity: 0.6;
-    align-self: flex-end;
-    margin-bottom: 0.5rem;
+  .hero__content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--sp-md) var(--sp-3xl);
   }
   .hero__catch {
     font-family: var(--ff-serif);
-    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
     font-weight: 700;
-    color: var(--c-text);
-    line-height: 1.8;
+    color: var(--c-white);
+    line-height: 1.6;
+    margin-bottom: var(--sp-md);
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .hero__award-row {
     margin-bottom: var(--sp-lg);
   }
-  .hero__badges {
-    display: flex;
-    gap: var(--sp-md);
-    margin-bottom: var(--sp-lg);
-  }
-  .hero__badge {
-    display: flex;
-    align-items: baseline;
-    gap: 4px;
-  }
-  .hero__badge-num {
-    font-family: var(--ff-condensed);
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--c-primary-dark);
-  }
-  .hero__badge-label {
-    font-size: 0.8rem;
-    color: var(--c-text-light);
-  }
-  .hero__right { position: relative; }
-  .hero__photo-frame {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-  }
-  .hero__photo-frame img {
-    width: 100%;
-    aspect-ratio: 3/4;
-    object-fit: cover;
-    object-position: center top;
-  }
-  .hero__award-tag {
-    position: absolute;
-    bottom: -16px;
-    left: 50%;
-    transform: translateX(-50%);
+  .hero__award-badge {
+    display: inline-block;
     background: var(--c-primary);
     color: var(--c-white);
-    padding: 10px 24px;
+    padding: 8px 24px;
     border-radius: 4px;
-    white-space: nowrap;
-    box-shadow: 0 4px 16px rgba(0,131,124,0.3);
-  }
-  .hero__award-text {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 700;
     letter-spacing: 0.03em;
   }
-  .hero__award-text strong {
+  .hero__award-badge strong {
     font-family: var(--ff-condensed);
-    font-size: 1.4rem;
-    margin: 0 2px;
+    font-size: 1.5rem;
+    margin: 0 3px;
   }
+
   @media (max-width: 768px) {
-    .hero__inner { grid-template-columns: 1fr; gap: var(--sp-lg); }
-    .hero__73 { font-size: 7rem; }
-    .hero__badges { flex-wrap: wrap; }
-    .hero__photo-frame img { aspect-ratio: 4/5; }
-    .hero__award-tag { position: relative; bottom: auto; left: auto; transform: none; margin-top: var(--sp-sm); text-align: center; }
+    .hero { height: 85vh; min-height: 500px; }
+    .hero__bg { object-position: 60% 15%; }
+    .hero__73 { font-size: 10rem; }
+    .hero__gradient {
+      background:
+        linear-gradient(to top, rgba(0,80,75,0.85) 0%, rgba(0,80,75,0.5) 40%, transparent 70%);
+    }
+    .hero__content { padding-bottom: var(--sp-xl); }
   }
 
   .service { padding: var(--sp-4xl) 0; background: var(--c-white); }
