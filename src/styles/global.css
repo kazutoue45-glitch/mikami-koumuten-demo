@@ -3,11 +3,11 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --c-primary: #00837C;
-  --c-primary-dark: #005F5A;
-  --c-primary-light: #E6F5F3;
-  --c-accent: #2C2C2C;
-  --c-warm-gray: #F5F2ED;
+  --c-orange: #D4820A;
+  --c-orange-dark: #B56E08;
+  --c-orange-light: #FFF5E6;
+  --c-accent: #3A3A3A;
+  --c-warm-gray: #F9F6F1;
   --c-white: #FFFFFF;
   --c-text: #2C2C2C;
   --c-text-light: #666666;
@@ -60,7 +60,7 @@ ul { list-style: none; }
   font-family: var(--ff-condensed);
   font-size: var(--fs-small);
   font-weight: 600;
-  color: var(--c-primary);
+  color: var(--c-orange);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   display: block;
@@ -70,7 +70,7 @@ ul { list-style: none; }
   font-family: var(--ff-serif);
   font-size: var(--fs-h2);
   font-weight: 700;
-  color: var(--c-primary-dark);
+  color: var(--c-accent);
   line-height: 1.4;
 }
 
@@ -86,14 +86,14 @@ ul { list-style: none; }
   border: none;
 }
 .btn--primary {
-  background: var(--c-primary-dark);
+  background: var(--c-accent);
   color: var(--c-white);
 }
 .btn--primary:hover {
-  background: var(--c-primary);
+  background: var(--c-orange);
 }
 .btn--gold {
-  background: var(--c-primary);
+  background: var(--c-orange);
   color: var(--c-white);
 }
 .btn--gold:hover {
