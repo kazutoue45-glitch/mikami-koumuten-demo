@@ -24,6 +24,7 @@ const base = import.meta.env.BASE_URL;
         <span class="section-header__en">Service</span>
         <h2 class="section-header__ja">事業内容</h2>
       </div>
+      <p class="service__lead">公共建築工事を主軸に営業しております。区役所の耐震工事、小学校の外部改修、地下鉄のホーム改修、水道局の施設の工事、市立病院の外壁改修など、様々な公共工事を手がけています。</p>
       <div class="service__grid">
         <a href={`${base}works/`} class="service__item">
           <div class="service__img-wrap">
@@ -31,27 +32,37 @@ const base = import.meta.env.BASE_URL;
           </div>
           <div class="service__body">
             <h3 class="service__title">公共建築工事</h3>
-            <p class="service__text">区役所の耐震工事、小学校の外部改修、地下鉄のホーム改修、市立病院の外壁改修。札幌市の公共インフラを支えています。</p>
+            <p class="service__text">区役所・小学校・地下鉄・水道局・市立病院など、札幌市の公共インフラを支える工事を主軸に営業しています。</p>
           </div>
         </a>
         <a href={`${base}works/`} class="service__item">
           <div class="service__img-wrap">
-            <img src={`${base}images/postal.jpg`} alt="施設修繕" width="800" height="600" />
+            <img src={`${base}images/postal.jpg`} alt="郵便局修繕" width="800" height="600" />
           </div>
           <div class="service__body">
-            <h3 class="service__title">施設修繕</h3>
-            <p class="service__text">札幌市東部エリアの郵便局122局の修繕指定業者。NTTドコモ基地局の新設工事も15局以上手がけています。</p>
+            <h3 class="service__title">郵便局・通信施設</h3>
+            <p class="service__text">札幌市東部エリアの郵便局122局の修繕指定業者。NTTドコモ基地局の新設工事も15局以上手がけました。</p>
           </div>
         </a>
         <a href={`${base}works/`} class="service__item">
           <div class="service__img-wrap">
-            <img src={`${base}images/renovation.jpg`} alt="個人住宅リフォーム" width="800" height="600" />
+            <img src={`${base}images/community-center.jpg`} alt="曙まちづくりセンター" width="800" height="600" />
           </div>
           <div class="service__body">
-            <h3 class="service__title">個人住宅リフォーム</h3>
-            <p class="service__text">公共工事で培った品質基準で、ご自宅のリフォームにも対応。大きな工事から小さな修繕まで、お気軽にご相談ください。</p>
+            <h3 class="service__title">施設新築・改修</h3>
+            <p class="service__text">曙まちづくりセンター新築工事（2024年竣工）など、地域に根ざした施設の建築・改修を行っています。</p>
           </div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="kenkou">
+    <div class="container kenkou__inner">
+      <img src={`${base}images/kenkou-keiei.jpg`} alt="健康経営優良法人2026" class="kenkou__badge" width="240" />
+      <div class="kenkou__body">
+        <h2 class="kenkou__title">健康経営優良法人2026（中小規模法人部門）に認定されました！</h2>
+        <p class="kenkou__text">社員の健康管理を経営的な視点で考え、戦略的に実践する企業として、経済産業省より認定を受けました。</p>
       </div>
     </div>
   </section>
@@ -186,6 +197,13 @@ const base = import.meta.env.BASE_URL;
     .hero__bg { object-position: 70% center; }
   }
 
+  .service__lead {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--sp-xl);
+    color: var(--c-text-light);
+    line-height: 1.8;
+  }
   .service { padding: var(--sp-4xl) 0; background: var(--c-white); }
   .service__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-lg); }
   .service__item { display: block; overflow: hidden; border-radius: 6px; background: var(--c-warm-gray); transition: var(--transition); }
@@ -197,6 +215,33 @@ const base = import.meta.env.BASE_URL;
   .service__title { font-family: var(--ff-serif); font-size: var(--fs-h3); font-weight: 700; color: var(--c-accent); margin-bottom: var(--sp-xs); }
   .service__text { font-size: var(--fs-small); color: var(--c-text-light); line-height: 1.8; }
   @media (max-width: 768px) { .service__grid { grid-template-columns: 1fr; } }
+
+  .kenkou {
+    padding: var(--sp-3xl) 0;
+    background: var(--c-orange-light);
+  }
+  .kenkou__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-xl);
+  }
+  .kenkou__badge { flex-shrink: 0; }
+  .kenkou__title {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    color: var(--c-accent);
+    margin-bottom: var(--sp-xs);
+  }
+  .kenkou__text {
+    font-size: var(--fs-small);
+    color: var(--c-text-light);
+    line-height: 1.8;
+  }
+  @media (max-width: 768px) {
+    .kenkou__inner { flex-direction: column; text-align: center; }
+    .kenkou__badge { width: 180px; }
+  }
 
   .works-hl { padding: var(--sp-4xl) 0; background: var(--c-warm-gray); }
   .works-hl__item { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--sp-xl); align-items: center; }
