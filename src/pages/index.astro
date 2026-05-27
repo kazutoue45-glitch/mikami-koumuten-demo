@@ -8,13 +8,13 @@ const base = import.meta.env.BASE_URL;
   <section class="hero">
     <img src={`${base}images/hero.jpg`} alt="" class="hero__bg" />
     <div class="hero__gradient"></div>
-    <div class="hero__73" aria-hidden="true">73</div>
     <div class="hero__content">
-      <p class="hero__catch">創業昭和28年。<br />札幌の街を守り続けて。</p>
-      <div class="hero__award-row">
-        <span class="hero__award-badge">札幌市優良工事表彰 通算<strong>13</strong>回受賞</span>
-      </div>
-      <a href={`${base}contact/`} class="btn btn--primary hero__cta">無料で相談してみる</a>
+      <h1 class="hero__heading">
+        <span class="hero__line">築く。守る。</span>
+        <span class="hero__line hero__line--num">73<span class="hero__line--unit">年。</span></span>
+      </h1>
+      <p class="hero__sub">札幌市優良工事表彰 通算13回。創業昭和28年の工務店です。</p>
+      <a href={`${base}contact/`} class="hero__cta-btn">無料で相談してみる</a>
     </div>
   </section>
 
@@ -114,12 +114,11 @@ const base = import.meta.env.BASE_URL;
 <style>
   .hero {
     position: relative;
-    height: 100vh;
+    height: 100svh;
     min-height: 600px;
-    max-height: 900px;
     overflow: hidden;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
   }
   .hero__bg {
     position: absolute;
@@ -127,7 +126,7 @@ const base = import.meta.env.BASE_URL;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 15%;
+    object-position: center 30%;
     z-index: 0;
   }
   .hero__gradient {
@@ -135,69 +134,69 @@ const base = import.meta.env.BASE_URL;
     inset: 0;
     z-index: 1;
     background:
-      linear-gradient(to top, rgba(0,80,75,0.8) 0%, rgba(0,80,75,0.4) 35%, transparent 65%),
-      linear-gradient(to right, rgba(0,80,75,0.3) 0%, transparent 50%);
-  }
-  .hero__73 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -55%);
-    font-family: var(--ff-condensed);
-    font-size: clamp(14rem, 35vw, 28rem);
-    font-weight: 700;
-    color: rgba(255,255,255,0.3);
-    line-height: 0.8;
-    pointer-events: none;
-    z-index: 2;
-    letter-spacing: -0.04em;
-    text-shadow: 0 0 60px rgba(0,0,0,0.15);
+      linear-gradient(to top, rgba(0,90,85,0.7) 0%, rgba(0,90,85,0.3) 40%, transparent 70%),
+      linear-gradient(to right, rgba(0,90,85,0.4) 0%, transparent 60%);
   }
   .hero__content {
     position: relative;
-    z-index: 3;
-    width: 100%;
+    z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--sp-md) var(--sp-3xl);
+    padding: 0 var(--sp-lg);
+    width: 100%;
   }
-  .hero__catch {
-    font-family: var(--ff-serif);
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 700;
-    color: var(--c-white);
-    line-height: 1.6;
+  .hero__heading {
     margin-bottom: var(--sp-md);
-    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
   }
-  .hero__award-row {
-    margin-bottom: var(--sp-lg);
-  }
-  .hero__award-badge {
-    display: inline-block;
-    background: var(--c-primary);
-    color: var(--c-white);
-    padding: 8px 24px;
-    border-radius: 4px;
-    font-size: 0.95rem;
+  .hero__line {
+    display: block;
+    font-family: var(--ff-serif);
+    font-size: clamp(3rem, 7vw, 5.5rem);
     font-weight: 700;
-    letter-spacing: 0.03em;
+    color: var(--c-white);
+    line-height: 1.2;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.3);
   }
-  .hero__award-badge strong {
+  .hero__line--num {
     font-family: var(--ff-condensed);
-    font-size: 1.5rem;
-    margin: 0 3px;
+    font-size: clamp(6rem, 15vw, 12rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .hero__line--unit {
+    font-family: var(--ff-serif);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    letter-spacing: 0;
+  }
+  .hero__sub {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    color: rgba(255,255,255,0.85);
+    margin-bottom: var(--sp-lg);
+    text-shadow: 0 1px 10px rgba(0,0,0,0.3);
+  }
+  .hero__cta-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background: var(--c-white);
+    color: var(--c-primary-dark);
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: var(--transition);
+    border: 2px solid var(--c-white);
+  }
+  .hero__cta-btn:hover {
+    background: transparent;
+    color: var(--c-white);
   }
 
   @media (max-width: 768px) {
-    .hero { height: 85vh; min-height: 500px; }
-    .hero__bg { object-position: 60% 15%; }
-    .hero__73 { font-size: 10rem; }
-    .hero__gradient {
-      background:
-        linear-gradient(to top, rgba(0,80,75,0.85) 0%, rgba(0,80,75,0.5) 40%, transparent 70%);
-    }
+    .hero { align-items: flex-end; }
     .hero__content { padding-bottom: var(--sp-xl); }
+    .hero__bg { object-position: 65% 30%; }
+    .hero__gradient {
+      background: linear-gradient(to top, rgba(0,90,85,0.85) 0%, rgba(0,90,85,0.4) 50%, transparent 75%);
+    }
   }
 
   .service { padding: var(--sp-4xl) 0; background: var(--c-white); }
