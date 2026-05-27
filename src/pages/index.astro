@@ -14,6 +14,10 @@ const base = import.meta.env.BASE_URL;
         <span class="hero__line hero__line--num">73<span class="hero__line--unit">年。</span></span>
       </h1>
       <p class="hero__sub">札幌市優良工事表彰 通算13回受賞</p>
+      <div class="hero__kenkou">
+        <img src={`${base}images/kenkou-keiei.jpg`} alt="健康経営優良法人2026" width="160" />
+        <span class="hero__kenkou-text">健康経営優良法人2026 認定</span>
+      </div>
       <a href={`${base}contact/`} class="hero__cta-btn">まずはご相談ください</a>
     </div>
   </section>
@@ -176,6 +180,22 @@ const base = import.meta.env.BASE_URL;
     color: var(--c-orange);
     font-weight: 700;
     margin-bottom: var(--sp-lg);
+  }
+  .hero__kenkou {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-sm);
+    margin-bottom: var(--sp-lg);
+    background: rgba(255,255,255,0.85);
+    padding: 8px 16px;
+    border-radius: 6px;
+    width: fit-content;
+  }
+  .hero__kenkou img { border-radius: 4px; }
+  .hero__kenkou-text {
+    font-size: var(--fs-small);
+    font-weight: 700;
+    color: var(--c-accent);
   }
   .hero__cta-btn {
     display: inline-block;
