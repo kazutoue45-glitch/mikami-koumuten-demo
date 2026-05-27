@@ -17,7 +17,7 @@ const base = import.meta.env.BASE_URL;
       <a href={`${base}contact/`} class="hero__cta-btn">まずはご相談ください</a>
     </div>
     <div class="hero__kenkou">
-      <img src={`${base}images/kenkou-keiei.jpg`} alt="健康経営優良法人2026" width="160" />
+      <img src={`${base}images/kenkou-keiei.jpg`} alt="健康経営優良法人2026" width="280" />
       <span class="hero__kenkou-text">健康経営優良法人2026 認定</span>
     </div>
   </section>
@@ -189,20 +189,20 @@ const base = import.meta.env.BASE_URL;
     align-items: center;
     gap: var(--sp-sm);
     background: rgba(255,255,255,0.9);
-    padding: 12px 20px;
+    padding: 20px 28px;
     border-radius: 6px;
     z-index: 2;
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   }
   .hero__kenkou img { border-radius: 4px; }
   .hero__kenkou-text {
-    font-size: var(--fs-small);
+    font-size: 1rem;
     font-weight: 700;
     color: var(--c-accent);
   }
   @media (max-width: 768px) {
     .hero__kenkou { right: var(--sp-md); bottom: var(--sp-md); }
-    .hero__kenkou img { width: 100px; }
+    .hero__kenkou img { width: 160px; }
   }
   .hero__cta-btn {
     display: inline-block;
